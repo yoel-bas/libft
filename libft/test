@@ -1,0 +1,26 @@
+#include "libft.h"
+
+void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+        int     i;
+
+        i = 0;
+        if (!s || !f)
+                return ;
+        while (s[i])
+        {
+                f (i, s + i);
+                i++;
+        }
+}
+void    ft_tolowe2r(unsigned int i, char  *y)
+{
+        i = 0;
+                y[i] += 1;
+}
+int main()
+{
+        char str[] = "HLLLL";
+        ft_striteri(str, ft_tolowe2r);
+        printf("%s", str);
+}
